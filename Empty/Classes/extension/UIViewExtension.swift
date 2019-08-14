@@ -1,10 +1,3 @@
-//
-//  UIViewExtension.swift
-//  Empty
-//
-//  Created by Levi Bostian on 8/14/19.
-//
-
 import Foundation
 import UIKit
 

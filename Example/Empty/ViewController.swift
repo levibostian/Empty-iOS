@@ -1,16 +1,7 @@
-//
-//  ViewController.swift
-//  Empty
-//
-//  Created by Levi Bostian on 08/13/2019.
-//  Copyright (c) 2019 Levi Bostian. All rights reserved.
-//
-
-import UIKit
 import Empty
+import UIKit
 
 class ViewController: UIViewController {
-
     private var didSetupConstraints = false
 
     enum EmptyButtons: String {
@@ -64,7 +55,6 @@ class ViewController: UIViewController {
 
         super.updateViewConstraints()
     }
-
 }
 
 extension ViewController: EmptyViewDelegate {
@@ -81,8 +71,8 @@ extension ViewController: EmptyViewDelegate {
             alert = UIAlertController(title: nil, message: "Don't retry button pressed", preferredStyle: .alert)
         }
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
         }))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 }

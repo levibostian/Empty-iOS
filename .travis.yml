@@ -1,14 +1,34 @@
-# references:
-# * https://www.objc.io/issues/6-build-tools/travis-ci/
-# * https://github.com/supermarin/xcpretty#usage
+os: osx
+osx_image: xcode10.2
+language: swift
 
-osx_image: xcode7.3
-language: objective-c
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
-script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Empty.xcworkspace -scheme Empty-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint
+before_cache:
+  - cocoacache save --podfile Example/Podfile.lock 
+cache:
+  bundler: true 
+  directories:    
+    - Specs
+install:  
+  - bundle install
+  - cocoacache restore --podfile Example/Podfile.lock 
+  - cd Example; bundle exec pod check || (bundle exec pod install --repo-update); cd ..; # use () to group commands together to run if `pod check`
+env:
+  global:
+    # COCOAPODS_TRUNK_TOKEN - access token to deploy to cocoapods.    
+
+jobs:
+  include:
+  - stage: tests
+    script: ruby scripts/run_unit_tests.rb
+  - stage: pull-request
+    script: ruby scripts/pull_request.rb
+  - stage: deploy
+    script: ruby scripts/deploy.rb
+
+stages:
+  - name: tests
+    if: type IN (pull_request, push) AND tag IS blank
+  - name: pull-request
+    if: type IN (pull_request)
+  - name: deploy
+    if: tag IS present

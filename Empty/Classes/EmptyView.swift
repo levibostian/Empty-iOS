@@ -1,21 +1,17 @@
-//
-//  EmptyView.swift
-//  Empty
-//
-//  Created by Levi Bostian on 8/14/19.
-//
-
 import Foundation
 import UIKit
 
+/// Delegate for `EmptyView`.
 public protocol EmptyViewDelegate: AnyObject {
+    /// Button that was added to `EmptyView` has been pressed.
     func buttonPressed(id: EmptyViewButtonTag)
 }
 
+/// Defines typealias for tags when adding buttons to `EmptyView`.
 public typealias EmptyViewButtonTag = String
 
+/// Quick and easy UIView to use when you have no data to show. Also great for displaying errors!
 public class EmptyView: UIView {
-
     /// Access to `EmptyViewConfig` to set defaults on all instances of `EmptyView`.
     public static let defaultConfig: EmptyViewConfig = EmptyViewConfig.shared
     /// Override `defaultConfig` for this once instance.
@@ -25,6 +21,7 @@ public class EmptyView: UIView {
         }
     }
 
+    /// Set delegate for `EmptyView`.
     public weak var delegate: EmptyViewDelegate?
 
     /// Read-only reference to the title `UILabel`.
@@ -37,7 +34,7 @@ public class EmptyView: UIView {
     public var buttons: [EmptyViewButtonTag: UIButton] {
         var buttonsCollection: [EmptyViewButtonTag: UIButton] = [:]
 
-        self.buttonIds.forEach { (buttonId, buttonViewTag) in
+        buttonIds.forEach { buttonId, buttonViewTag in
             if let button: UIButton = self.buttonsContainer.arrangedSubviews.first(where: { $0 is UIButton && $0.tag == buttonViewTag }) as? UIButton {
                 buttonsCollection[buttonId] = button
             }
@@ -57,6 +54,7 @@ public class EmptyView: UIView {
         return view
     }()
 
+    /// Internal use only.
     public let labelsContainer: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
@@ -67,6 +65,7 @@ public class EmptyView: UIView {
         return view
     }()
 
+    /// Internal use only.
     public let buttonsContainer: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
@@ -98,17 +97,17 @@ public class EmptyView: UIView {
      * Note: If there is already a `UIView` with given `id`, that view will be removed before the new `UIButton` is added.
      */
     public func addButton(id: EmptyViewButtonTag, message: String) {
-        self.removeButton(id: id)
+        removeButton(id: id)
 
-        let button = self.config.newButton()
+        let button = config.newButton()
         let buttonTag = buttonIds.keys.count + 1
         button.tag = buttonTag
         button.setTitle(message, for: .normal)
         button.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
 
-        self.buttonsContainer.addArrangedSubview(button)
-        self.buttonIds[id] = buttonTag
+        buttonsContainer.addArrangedSubview(button)
+        buttonIds[id] = buttonTag
     }
 
     /// Remove a previously added `UIButton`.
@@ -117,17 +116,17 @@ public class EmptyView: UIView {
             return
         }
 
-        self.buttonsContainer.removeArrangedSubview(button)
-        self.buttonIds.removeValue(forKey: id)
+        buttonsContainer.removeArrangedSubview(button)
+        buttonIds.removeValue(forKey: id)
     }
 
     /// Remove all views from `EmptyView` to start over.
     public func resetViews() {
-        self.title = nil
-        self.message = nil
-        self.removeAllSubviews()
+        title = nil
+        message = nil
+        removeAllSubviews()
 
-        self.build()
+        build()
     }
 
     /// Internal use only. Set `delegate` to receive notifications when buttons are pressed.
@@ -149,16 +148,16 @@ public class EmptyView: UIView {
 
     private func build() {
         // Prevent views being added twice. But also, allow the chance to create new views if the customization has changed.
-        self.labelsContainer.removeAllArrangedSubviews()
-        self.titleLabel = nil
-        self.messageLabel = nil
+        labelsContainer.removeAllArrangedSubviews()
+        titleLabel = nil
+        messageLabel = nil
 
-        if self.title != nil {
-            titleLabel = self.config.newTitleLabel()
+        if title != nil {
+            titleLabel = config.newTitleLabel()
             labelsContainer.addArrangedSubview(titleLabel!)
         }
-        if self.message != nil {
-            messageLabel = self.config.newMessageLabel()
+        if message != nil {
+            messageLabel = config.newMessageLabel()
             labelsContainer.addArrangedSubview(messageLabel!)
         }
 
@@ -205,5 +204,4 @@ public class EmptyView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
 }

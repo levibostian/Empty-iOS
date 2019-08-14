@@ -1,17 +1,9 @@
-//
-//  UIStackView.swift
-//  Empty
-//
-//  Created by Levi Bostian on 8/14/19.
-//
-
 import Foundation
 import UIKit
 
 internal extension UIStackView {
-
     func removeAllArrangedSubviews() {
-        self.arrangedSubviews.forEach { (subview) in
+        arrangedSubviews.forEach { subview in
             self.completelyRemoveArrangedSubview(subview)
         }
     }
@@ -21,10 +13,9 @@ internal extension UIStackView {
             return
         }
 
-        if self.arrangedSubviews.contains(view) {
-            self.removeArrangedSubview(view)
+        if arrangedSubviews.contains(view) {
+            removeArrangedSubview(view)
             view.removeFromSuperview()
         }
     }
-
 }

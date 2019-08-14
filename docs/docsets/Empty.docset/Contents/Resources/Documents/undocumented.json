@@ -1,0 +1,103 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfig.swift",
+      "line": 17,
+      "symbol": "EmptyViewConfig.defaultTitleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfig.swift",
+      "line": 26,
+      "symbol": "EmptyViewConfig.newMessageLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfig.swift",
+      "line": 30,
+      "symbol": "EmptyViewConfig.defaultMessageLabel",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfig.swift",
+      "line": 39,
+      "symbol": "EmptyViewConfig.newButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfig.swift",
+      "line": 43,
+      "symbol": "EmptyViewConfig.defaultButton",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfigPresents.swift",
+      "line": 5,
+      "symbol": "EmptyViewConfigPreset.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfigPresents.swift",
+      "line": 6,
+      "symbol": "EmptyViewConfigPreset.messageLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfigPresents.swift",
+      "line": 7,
+      "symbol": "EmptyViewConfigPreset.button",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfigPresents.swift",
+      "line": 23,
+      "symbol": "DarkEmptyViewConfig.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfigPresents.swift",
+      "line": 29,
+      "symbol": "DarkEmptyViewConfig.messageLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfigPresents.swift",
+      "line": 35,
+      "symbol": "DarkEmptyViewConfig.button",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfigPresents.swift",
+      "line": 44,
+      "symbol": "LightEmptyViewConfig.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfigPresents.swift",
+      "line": 50,
+      "symbol": "LightEmptyViewConfig.messageLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/levibostian/code/Empty-iOS/Empty/Classes/EmptyViewConfigPresents.swift",
+      "line": 56,
+      "symbol": "LightEmptyViewConfig.button",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/levibostian/code/Empty-iOS"
+}

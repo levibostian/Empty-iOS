@@ -1,13 +1,5 @@
-//
-//  Empty_ExampleUITests.swift
-//  Empty_ExampleUITests
-//
-//  Created by Levi Bostian on 8/14/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
-//
-
-import XCTest
 @testable import Pods_Empty_Example
+import XCTest
 
 class ViewControllerTests: XCTestCase {
     var app: XCUIApplication!
@@ -47,7 +39,6 @@ class ViewControllerTests: XCTestCase {
         viewController.dontRetryButton.tap()
         viewController.dontRetryAlert.assertShown()
     }
-
 }
 
 class ViewControllerPageObject {
