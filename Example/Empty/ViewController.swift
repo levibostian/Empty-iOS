@@ -41,6 +41,12 @@ class ViewController: UIViewController {
         emptyView.delegate = self
 
         emptyView.addButton(id: EmptyButtons.retry.rawValue, message: "Retry")
+        emptyView.config.newButton = {
+            let button = EmptyViewConfig.defaultButton
+            button.setTitleColor(.blue, for: .normal)
+            return button
+        }
+
         emptyView.addButton(id: EmptyButtons.dontRetry.rawValue, message: "Dont Retry")
     }
 

@@ -19,17 +19,13 @@ public class EmptyView: UIView {
     /// Access to `EmptyViewConfig` to set defaults on all instances of `EmptyView`.
     public static let defaultConfig: EmptyViewConfig = EmptyViewConfig.shared
     /// Override `defaultConfig` for this once instance.
-    public var config: EmptyViewConfig? {
+    public var config: EmptyViewConfig = EmptyView.defaultConfig {
         didSet {
             build()
         }
     }
 
     public weak var delegate: EmptyViewDelegate?
-
-    private var _config: EmptyViewConfig {
-        return config ?? EmptyView.defaultConfig
-    }
 
     /// Read-only reference to the title `UILabel`.
     public private(set) var titleLabel: UILabel?
@@ -104,7 +100,7 @@ public class EmptyView: UIView {
     public func addButton(id: EmptyViewButtonTag, message: String) {
         self.removeButton(id: id)
 
-        let button = self._config.newButton
+        let button = self.config.newButton()
         let buttonTag = buttonIds.keys.count + 1
         button.tag = buttonTag
         button.setTitle(message, for: .normal)
@@ -158,11 +154,11 @@ public class EmptyView: UIView {
         self.messageLabel = nil
 
         if self.title != nil {
-            titleLabel = self._config.newTitleLabel
+            titleLabel = self.config.newTitleLabel()
             labelsContainer.addArrangedSubview(titleLabel!)
         }
         if self.message != nil {
-            messageLabel = self._config.newMessageLabel
+            messageLabel = self.config.newMessageLabel()
             labelsContainer.addArrangedSubview(messageLabel!)
         }
 
@@ -188,7 +184,7 @@ public class EmptyView: UIView {
 
     private func setupConstraints() {
         let superviewMargins = layoutMarginsGuide
-        let rootViewPadding = _config.viewPadding
+        let rootViewPadding = config.viewPadding
 
         rootView.translatesAutoresizingMaskIntoConstraints = false
         rootView.centerYAnchor.constraint(equalTo: superviewMargins.centerYAnchor).isActive = true

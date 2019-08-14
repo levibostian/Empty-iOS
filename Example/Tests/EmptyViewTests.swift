@@ -112,18 +112,24 @@ class Tests: XCTestCase {
         let changedTextColor: UIColor = .red
 
         let config: EmptyViewConfig = {
-            let config = EmptyViewConfig.dark
-            config.customizeTitleLabel = { label in
+            let config = EmptyViewConfig()
+            config.newTitleLabel = {
+                let label = EmptyViewConfig.defaultTitleLabel
                 label.textColor = changedTextColor
                 expectCustomizeTitleLabel.fulfill()
+                return label
             }
-            config.customizeMessageLabel = { label in
+            config.newMessageLabel = {
+                let label = EmptyViewConfig.defaultMessageLabel
                 label.textColor = changedTextColor
                 expectCustomizeMessageLabel.fulfill()
+                return label
             }
-            config.customizeButton = { button in
+            config.newButton = {
+                let button = EmptyViewConfig.defaultButton
                 button.setTitleColor(changedTextColor, for: .normal)
                 expectCustomizeButtonLabel.fulfill()
+                return button
             }
             return config
         }()
