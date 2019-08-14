@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'Empty_Example' do
+  pod 'Empty', :path => '../'
+  pod 'SwiftLint'
+  pod 'SwiftFormat/CLI'
+
+  target 'Empty_Tests' do
+    inherit! :search_paths
+  end
+end
