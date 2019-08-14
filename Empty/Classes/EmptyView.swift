@@ -42,7 +42,7 @@ public class EmptyView: UIView {
         var buttonsCollection: [EmptyViewButtonTag: UIButton] = [:]
 
         self.buttonIds.forEach { (buttonId, buttonViewTag) in
-            if let button: UIButton = self.rootView.arrangedSubviews.first(where: { $0 is UIButton && $0.tag == buttonViewTag }) as? UIButton {
+            if let button: UIButton = self.buttonsContainer.arrangedSubviews.first(where: { $0 is UIButton && $0.tag == buttonViewTag }) as? UIButton {
                 buttonsCollection[buttonId] = button
             }
         }

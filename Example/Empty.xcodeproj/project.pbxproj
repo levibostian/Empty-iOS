@@ -12,10 +12,11 @@
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		D43CB416B85CD48C37B4ED11 /* Pods_Empty_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F159713EB3DA69512108D2CA /* Pods_Empty_Example.framework */; };
 		F7277EED23047689005FF0E9 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7277EEC23047689005FF0E9 /* AccessibilityIdentifiers.swift */; };
 		F7277EEE23047696005FF0E9 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7277EEC23047689005FF0E9 /* AccessibilityIdentifiers.swift */; };
+		F7277EF223049F59005FF0E9 /* EmptyViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7277EF123049F59005FF0E9 /* EmptyViewTests.swift */; };
+		F7277EF42304A2D1005FF0E9 /* TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7277EF32304A2D1005FF0E9 /* TestUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +41,14 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Empty_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Empty_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		A21B045797EDADF6AD5AEF66 /* Pods-Empty_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empty_Example.debug.xcconfig"; path = "Target Support Files/Pods-Empty_Example/Pods-Empty_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BDA4581A0441ABC9CD927D03 /* Pods-Empty_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empty_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Empty_Tests/Pods-Empty_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BDEE4756BFD823B7B4C83780 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C6433D470A7FD7ED5D0229A8 /* Pods_Empty_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Empty_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F159713EB3DA69512108D2CA /* Pods_Empty_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Empty_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7277EEC23047689005FF0E9 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		F7277EF123049F59005FF0E9 /* EmptyViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyViewTests.swift; sourceTree = "<group>"; };
+		F7277EF32304A2D1005FF0E9 /* TestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtil.swift; sourceTree = "<group>"; };
 		F9ED4CA534B58FD804EFB65A /* Pods-Empty_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empty_Example.release.xcconfig"; path = "Target Support Files/Pods-Empty_Example/Pods-Empty_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,8 +129,9 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				F7277EF123049F59005FF0E9 /* EmptyViewTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				F7277EF32304A2D1005FF0E9 /* TestUtil.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -342,8 +345,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 				F7277EEE23047696005FF0E9 /* AccessibilityIdentifiers.swift in Sources */,
+				F7277EF42304A2D1005FF0E9 /* TestUtil.swift in Sources */,
+				F7277EF223049F59005FF0E9 /* EmptyViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
