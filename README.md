@@ -25,6 +25,8 @@ Configured with default settings that will work for most use cases, but customiz
 * Full test suite. [![Build Status](https://travis-ci.com/levibostian/Empty-iOS.svg?branch=master)](https://travis-ci.com/levibostian/Empty-iOS)
 * [Full documentation](https://levibostian.github.io/Empty-iOS/). 
 
+I recommend you check out 2 other libraries that work nicely with Empty: [PleaseHold](https://github.com/levibostian/PleaseHold-iOS) and [Swapper](https://github.com/levibostian/Swapper-iOS).
+
 ## Installation
 
 Empty is available through [CocoaPods](https://cocoapods.org/pods/Empty). To install it, simply add the following line to your Podfile:
@@ -44,6 +46,7 @@ let emptyView: EmptyView = {
     let view = EmptyView()
     view.title = nil // title is optional 
     view.message = nil // message is optional    
+    view.translatesAutoresizingMaskIntoConstraints = false  
     return view
 }()
 ```
@@ -116,6 +119,7 @@ emptyView.config.newButton = {
     button.setTitleColor(.blue, for: .normal)
     return button
 }
+pleaseHoldView.addButton(id: "id", message: "Retry") // Add a button here, it will have blue text color!
 ```
 
 To make re-useable configurations for `EmptyView`, it's recommended to create an `EmptyViewConfigPresent`:

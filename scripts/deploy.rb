@@ -1,4 +1,4 @@
-equire 'trent'
+require 'trent'
 
 ci = Trent.new(:color => :light_blue)
 
