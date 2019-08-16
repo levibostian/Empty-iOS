@@ -1,7 +1,7 @@
 import Empty
 import XCTest
 
-class Tests: XCTestCase {
+class EmptyViewTests: XCTestCase {
     private var emptyView: EmptyView!
 
     override func setUp() {
@@ -101,6 +101,20 @@ class Tests: XCTestCase {
 
     func test_removeButton_buttonNotAdded_expectOk() {
         emptyView.removeButton(id: "foo")
+    }
+
+    func test_resetView_removesAllViews() {
+        emptyView.title = "title"
+        emptyView.message = "message"
+        emptyView.addButton(id: "id", message: "message")
+
+        emptyView.resetViews()
+
+        XCTAssertNil(emptyView.titleLabel)
+        XCTAssertNil(emptyView.messageLabel)
+        XCTAssertTrue(emptyView.buttons.isEmpty)
+        XCTAssertTrue(emptyView.labelsContainer.arrangedSubviews.isEmpty)
+        XCTAssertTrue(emptyView.buttonsContainer.arrangedSubviews.isEmpty)
     }
 
     func test_useConfig() {
