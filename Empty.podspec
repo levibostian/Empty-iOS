@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Empty'
-  s.version          = '0.0.1'
+  s.version          = '0.1.0'
   s.summary          = 'Quick and easy UIView to use when you have no data to show. Also great for displaying errors!'
 
 # This description is used to generate tags and improve search results.
