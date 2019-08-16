@@ -124,6 +124,8 @@ public class EmptyView: UIView {
     public func resetViews() {
         title = nil
         message = nil
+        labelsContainer.removeAllArrangedSubviews()
+        buttonsContainer.removeAllArrangedSubviews()
         removeAllSubviews()
 
         build()
