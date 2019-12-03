@@ -21,9 +21,12 @@ env:
 jobs:
   include:
   - stage: tests
-    script: ruby scripts/run_unit_tests.rb
+    script:
+      - bundle exec fastlane scan
   - stage: pull-request
-    script: ruby scripts/pull_request.rb
+    script: 
+      - bundle exec fastlane scan 
+      - bundle exec danger --fail-on-errors=true
   - stage: deploy
     script: ruby scripts/deploy.rb
 

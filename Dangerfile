@@ -40,6 +40,10 @@ def determineIfRelease(files_to_update_for_releases)
 end 
 
 if ENV["CI"] 
+  jazzy.undocumented(:all).each do |item|
+    message "You forgot to write documentation for this: ", file:item.file, line:item.line
+  end
+
   swiftformat.binary_path = "Example/Pods/SwiftFormat/CommandLineTool/swiftformat"
   swiftformat.check_format(fail_on_error: true)
 
@@ -48,9 +52,8 @@ if ENV["CI"]
   swiftlint.config_file = '.swiftlint.yml'  
   swiftlint.max_num_violations = 0
 
-  jazzy.undocumented(:all).each do |item|
-    message "You forgot to write documentation for this: ", file:item.file, line:item.line
-  end
+  junit.parse "reports/report.junit"
+  junit.report  
 
   if github.branch_for_base == "master"    
     determineIfRelease(files_to_update_for_releases)          

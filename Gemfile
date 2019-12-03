@@ -12,3 +12,6 @@ gem "danger-swiftlint", "~> 0.23.0"
 gem "danger-swiftformat", "~> 0.6.0"
 gem "trent", "~> 0.4.0"
 gem "jazzy", "~> 0.10.0"
+gem "fastlane"
+
+gem "danger-junit", "~> 1.0"
