@@ -8,6 +8,8 @@
 
 Quick and easy UIView to use when you have no data to show. Also great for displaying errors!
 
+*Android developer? Check out the [Android version of Empty](https://github.com/levibostian/empty-android)*
+
 ## What is Empty?
 
 During those times where there is no data to show to your user, Empty to the rescue! Empty is a quick and easy way to display a message to your user and help with the next step by adding a button with 1 line of code.
