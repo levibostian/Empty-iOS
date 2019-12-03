@@ -13,7 +13,7 @@
     <a title="Empty  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Empty Docs</a> (100% documented)</p>
+        <p><a href="index.html">Empty Docs</a> (0% documented)</p>
         <p class="header-right"><a href="https://github.com/levibostian/Empty-iOS"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -27,47 +27,6 @@
     <div class="content-wrapper">
       <nav class="sidebar">
         <ul class="nav-groups">
-          <li class="nav-group-name">
-            <a href="Classes.html">Classes</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/EmptyView.html">EmptyView</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/EmptyViewConfig.html">EmptyViewConfig</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Protocols.html">Protocols</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols/EmptyViewConfigPreset.html">EmptyViewConfigPreset</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/EmptyViewDelegate.html">EmptyViewDelegate</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Structs.html">Structures</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/DarkEmptyViewConfig.html">DarkEmptyViewConfig</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/LightEmptyViewConfig.html">LightEmptyViewConfig</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Typealiases.html">Type Aliases</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Typealiases.html#/s:5Empty0A13ViewButtonTaga">EmptyViewButtonTag</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -82,6 +41,8 @@
 <h1 id='empty' class='heading'>Empty</h1>
 
 <p>Quick and easy UIView to use when you have no data to show. Also great for displaying errors!</p>
+
+<p><em>Android developer? Check out the <a href="https://github.com/levibostian/empty-android">Android version of Empty</a></em></p>
 <h2 id='what-is-empty' class='heading'>What is Empty?</h2>
 
 <p>During those times where there is no data to show to your user, Empty to the rescue! Empty is a quick and easy way to display a message to your user and help with the next step by adding a button with 1 line of code.</p>
@@ -111,7 +72,7 @@
 <h1 id='getting-started' class='heading'>Getting started</h1>
 
 <ul>
-<li>Create an instance of <code><a href="Classes/EmptyView.html">EmptyView</a></code> in your <code>UIViewController</code>. You can do this with Storyboard by adding a <code>UIView</code> to Storyboard and setting the <code>UIView</code> class to <code><a href="Classes/EmptyView.html">EmptyView</a></code>, or create an instance in your Swift code:</li>
+<li>Create an instance of <code>EmptyView</code> in your <code>UIViewController</code>. You can do this with Storyboard by adding a <code>UIView</code> to Storyboard and setting the <code>UIView</code> class to <code>EmptyView</code>, or create an instance in your Swift code:</li>
 </ul>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">emptyView</span><span class="p">:</span> <span class="kt">EmptyView</span> <span class="o">=</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">EmptyView</span><span class="p">()</span>
@@ -123,7 +84,7 @@
 </code></pre>
 
 <ul>
-<li>Add the <code><a href="Classes/EmptyView.html">EmptyView</a></code> to your <code>UIViewController</code>. Pretty simple.</li>
+<li>Add the <code>EmptyView</code> to your <code>UIViewController</code>. Pretty simple.</li>
 </ul>
 
 <p>If you want to change the text of the title or message <code>UILabel</code>s, you can change them at runtime:</p>
@@ -137,7 +98,7 @@
 </code></pre>
 
 <ul>
-<li>If you want to add 1+ buttons to your <code><a href="Classes/EmptyView.html">EmptyView</a></code>:</li>
+<li>If you want to add 1+ buttons to your <code>EmptyView</code>:</li>
 </ul>
 <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
 
@@ -176,7 +137,7 @@
 <pre class="highlight swift"><code><span class="kt">Empty</span><span class="o">.</span><span class="n">defaultConfig</span><span class="o">.</span><span class="n">viewPadding</span> <span class="o">=</span> <span class="mf">10.0</span>
 </code></pre>
 
-<p>Or, you can configure 1 single instance of <code><a href="Classes/EmptyView.html">EmptyView</a></code>:</p>
+<p>Or, you can configure 1 single instance of <code>EmptyView</code>:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">emptyView</span> <span class="o">=</span> <span class="kt">EmptyView</span><span class="p">()</span>
 <span class="n">emptyView</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">newButton</span> <span class="o">=</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">EmptyViewConfig</span><span class="o">.</span><span class="n">defaultButton</span>
@@ -186,7 +147,7 @@
 <span class="n">pleaseHoldView</span><span class="o">.</span><span class="nf">addButton</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"id"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"Retry"</span><span class="p">)</span> <span class="c1">// Add a button here, it will have blue text color!</span>
 </code></pre>
 
-<p>To make re-useable configurations for <code><a href="Classes/EmptyView.html">EmptyView</a></code>, it&rsquo;s recommended to create an <code>EmptyViewConfigPresent</code>:</p>
+<p>To make re-useable configurations for <code>EmptyView</code>, it&rsquo;s recommended to create an <code>EmptyViewConfigPresent</code>:</p>
 <pre class="highlight swift"><code><span class="c1">/// Convenient set of `UIView`s that are dark in color. Great for light colored backgrounds.</span>
 <span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DarkEmptyViewConfig</span><span class="p">:</span> <span class="kt">EmptyViewConfigPreset</span> <span class="p">{</span>    
     <span class="kd">public</span> <span class="k">var</span> <span class="nv">titleLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="p">{</span>
@@ -212,7 +173,7 @@
 <span class="n">emptyView</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="kt">DarkEmptyViewConfig</span><span class="p">()</span><span class="o">.</span><span class="n">config</span>
 </code></pre>
 
-<p>For convenience, <code>Empty</code> comes with a light and dark colored present: <code><a href="Structs/DarkEmptyViewConfig.html">DarkEmptyViewConfig</a></code> and <code><a href="Structs/LightEmptyViewConfig.html">LightEmptyViewConfig</a></code> that you can use or extend. </p>
+<p>For convenience, <code>Empty</code> comes with a light and dark colored present: <code>DarkEmptyViewConfig</code> and <code>LightEmptyViewConfig</code> that you can use or extend. </p>
 
 <p>There are many things you can configure for <code>Empty</code>. For a list of all the configuration options, view the <a href="https://levibostian.github.io/Empty-iOS/Classes/EmptyViewConfig.html">docs on EmptyViewConfig</a></p>
 <h2 id='example' class='heading'>Example</h2>
@@ -226,8 +187,7 @@
 <li>Install cocoapods/gems and setup workspace:</li>
 </ul>
 <pre class="highlight shell"><code><span class="nv">$&gt;</span> bundle <span class="nb">install</span>
-<span class="nv">$&gt;</span> <span class="nb">cd </span>Empty/Example
-<span class="nv">$&gt;</span> pod <span class="nb">install</span>
+<span class="nv">$&gt;</span> <span class="nb">cd </span>Example<span class="p">;</span> pod <span class="nb">install</span><span class="p">;</span> <span class="nb">cd</span> ..<span class="p">;</span>
 </code></pre>
 
 <ul>
@@ -254,7 +214,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://github.com/levibostian/" target="_blank" rel="external">Levi Bostian</a>. All rights reserved. (Last updated: 2019-08-16)</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/levibostian/" target="_blank" rel="external">Levi Bostian</a>. All rights reserved. (Last updated: 2019-12-03)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

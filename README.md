@@ -168,8 +168,7 @@ Empty is a pretty simple CocoaPods library project. Follow the directions below 
 
 ```bash
 $> bundle install
-$> cd Empty/Example
-$> pod install
+$> cd Example; pod install; cd ..;
 ```
 
 * Setup git hooks [via overcommit](https://github.com/brigade/overcommit/) to run misc tasks for you when using git. 
